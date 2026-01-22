@@ -1,0 +1,12 @@
+<?php
+use Magediary\SvgIcons\ViewModel\SvgIconsCustom;
+use Hyva\Theme\Model\ViewModelRegistry;
+
+/** @var SvgIconsCustom $viewModels */
+$viewModels = $block->getData('viewModelRegistry') ?? \Magento\Framework\App\ObjectManager::getInstance()->get(ViewModelRegistry::class);
+
+/** @var \Magediary\SvgIcons\ViewModel\SvgIconsCustom $myIcons */
+$myIcons = $viewModels->require(\Magediary\SvgIcons\ViewModel\SvgIconsCustom::class);
+
+echo $myIcons->renderHtml('arrow-circle-up');
+?>
